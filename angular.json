@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "softadmin": {
+    "prueba": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,7 +26,12 @@
             ],
             "styles": [
               "src/styles.css"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -56,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "softadmin:build:production"
+              "buildTarget": "prueba:build:production"
             },
             "development": {
-              "buildTarget": "softadmin:build:development"
+              "buildTarget": "prueba:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "2bc31726-f660-408f-ae08-3a665d45174f"
+    "analytics": false
   }
 }

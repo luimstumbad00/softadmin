@@ -1,0 +1,16 @@
+.container {  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  grid-template-rows: 0.4fr 1.6fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Filtrados Titulo ."
+    "Filtrados Contenedores Contenedores"
+    "Filtrados Contenedores Contenedores";
+}
+
+.Filtrados { grid-area: Filtrados; }
+
+.Titulo { grid-area: Titulo; }
+
+.Contenedores { grid-area: Contenedores; }

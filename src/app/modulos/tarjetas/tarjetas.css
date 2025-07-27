@@ -1,0 +1,86 @@
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 16px;
+  gap: 16px;
+  white-space: nowrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+  min-width: 300px;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.status .label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.status-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.en-proceso {
+  color: green;
+}
+
+.retrasado {
+  color: goldenrod;
+}
+
+.completado {
+  color: blue;
+}
+
+.go-button {
+  background-color: #6F064F;
+  color: white;
+  padding: 8px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.go-button:hover {
+  background-color: #56004b;
+}

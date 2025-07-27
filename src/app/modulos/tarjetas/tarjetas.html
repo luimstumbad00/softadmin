@@ -1,0 +1,25 @@
+<div class="carousel-container">
+  <div *ngFor="let item of servicios" class="card">
+    <div class="card-header">
+      <span>Cliente: {{ item.cliente }}</span>
+      <span>{{ item.codigo }}</span>
+    </div>
+
+    <div class="card-title">
+      {{ item.mensaje }}
+    </div>
+
+    <div class="card-footer">
+      <span>{{ item.fecha }}</span>
+      <span>{{ item.hora }}</span>
+    </div>
+
+    <div class="card-bottom">
+      <div class="status">
+        <span class="label">Status</span><br />
+      </div>
+      <button class="go-button">Ir</button>
+    </div>
+  </div>
+</div>
+

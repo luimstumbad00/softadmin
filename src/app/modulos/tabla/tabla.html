@@ -1,0 +1,27 @@
+<table class="tabla-servicios">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Equipo</th>
+      <th>Clave</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+      <th>Estatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of servicios">
+      <td>{{ item.cliente }}</td>
+      <td>{{ item.equipo }}</td>
+      <td>{{ item.clave }}</td>
+      <td>{{ item.descripcion }}</td>
+      <td>{{ item.fecha }}</td>
+      <td>
+        <span [ngClass]="getStatusClass(item.estatus)">
+          {{ item.estatus }}
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
