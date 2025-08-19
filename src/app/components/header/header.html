@@ -1,8 +1,26 @@
-<header>
-    <nav>
-        <a routerLink="/">Inicio</a>
-        <a routerLink="/General">General</a>
-        <a routerLink="/Estatus">Estatus</a>
-        <a routerLink="/">LogOut</a>
-    </nav>
-</header>
+  <header class="custom-header">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Logo + Texto -->
+      <div class="d-flex align-items-center">
+        <img src="bersa_logo.png" style="width: 120px; height: auto;" alt="Logo" class="logo-img me-4">
+        <span class="header-text">SoftAdmin</span>
+      </div>
+
+      <!-- Opciones -->
+      <div class="d-flex align-items-center">
+        <a style="font-size: 1.2rem;" href="#" class="nav-link text-white d-flex flex-column align-items-center me-4">
+          <span class="material-icons mb-1">dashboard</span>
+          General
+        </a>
+        <a style="font-size: 1.2rem;" href="#" class="nav-link text-white d-flex flex-column align-items-center me-4">
+          <span class="material-icons mb-1">analytics</span>
+          Estatus
+        </a>
+        <button style="font-size: 1.2rem;" type="button" class="btn btn-logout d-flex flex-column align-items-center">
+          <span class="material-icons mb-1">logout</span>
+          Salir
+        </button>
+      </div>
+    </div>
+  </header>
