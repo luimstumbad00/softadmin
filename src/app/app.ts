@@ -1,15 +1,15 @@
+// src/app/app.ts
 import { Component, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
-import { LoginComponent } from "./pages/login/login";
-
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer,LoginComponent],
+  standalone: true,
+  imports: [RouterOutlet, Header, Footer], // solo componentes fijos
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('SoftAdmin');
