@@ -1,0 +1,62 @@
+<div class="login-container">
+  <div class="row g-0 h-100">
+    <!-- Columna del formulario -->
+    <div class="col-md-6 form-column d-flex align-items-center justify-content-center">
+      <div class="square-form-container">
+        <div class="text-center mb-4">
+          <img src="sa_logo.png" class="logo-img" alt="Logo">
+          <h4 class="mt-3 mb-4">Inicia Sesión</h4>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <!-- Campo Usuario -->
+          <div class="form-group mb-4">
+            <label class="form-label">Razón Social:</label>
+            <input formControlName="RazonSocial" class="form-control form-control-lg" 
+                   placeholder="Ingresa tu usuario" />
+            <div *ngIf="form.controls['RazonSocial'].touched && form.controls['RazonSocial'].invalid" 
+                 class="text-danger small mt-1">
+              Razón social requerida
+            </div>
+          </div>
+
+          <!-- Campo Contraseña con icono de ojo -->
+          <div class="form-group mb-4">
+            <label class="form-label">RFC:</label>
+            <div class="input-group">
+              <input formControlName="RFC" [type]="showPassword ? 'text' : 'password'" 
+                     class="form-control form-control-lg" placeholder="Ingresa tu clave" />
+              <button class="btn btn-outline-secondary" type="button" 
+                      (click)="showPassword = !showPassword">
+                <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+              </button>
+            </div>
+            <div *ngIf="form.controls['RFC'].touched && form.controls['RFC'].invalid" 
+                 class="text-danger small mt-1">
+              RFC requerido
+            </div>
+          </div>
+
+          <!-- Botón de Ingreso -->
+          <div class="d-grid gap-2 mt-4">
+            <button class="btn btn-primary btn-lg gradient-custom-2 py-3" 
+                    type="submit" [disabled]="loading">
+              INGRESAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Columna de imagen de fondo -->
+    <div class="col-md-6 image-column">
+      <div class="brand-overlay">
+        <h1 class="brand-title">SoftAdmin</h1>
+      </div>
+      <div class="company-logo-bottom">
+        <img src="bersa_logo.png" alt="Logo empresa" class="bottom-logo">
+      </div>
+    </div>
+  </div>
+</div>
+

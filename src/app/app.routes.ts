@@ -1,16 +1,21 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login';
-import { Logadm } from './pages/logadm/logadm';
 import { General } from './pages/general/general';
 import { Estatus } from './pages/estatus/estatus';
 import { authGuard } from './guards/auth-guard'
 import { Generalc } from './pages/generalc/generalc';
-
+import { Logina } from './components/logina/logina';
+import { Loginc } from './components/loginc/loginc';
 export const routes: Routes = [
-  { path: 'logadm', component: Logadm },
-  { path: 'generalc', component: Generalc }, // login, sin guard
-  { path: 'general', component: General, canActivate: [authGuard] }, // protegida
-  { path: '', redirectTo: 'estatus', pathMatch: 'full' }, // sin guard
-  { path: 'estatus', component: Estatus,}, // sin guard
-  { path: '**', redirectTo: 'estatus' },
+  { path: 'logina', component: Logina },
+  { path: 'loginc', component: Loginc },
+  // Paneles admin (protegidos)
+  { path: 'general', component: General, canActivate: [authGuard]},
+  { path: 'estatus', component: Estatus, canActivate: [authGuard]},
+   // Panel cliente (protegido)
+  { path: 'generalc', component: Generalc, canActivate: [authGuard]},
+  //Default
+  { path: '', redirectTo: 'logina', pathMatch: 'full' },
+  // Wildcard → login admin
+  { path: '**', redirectTo: 'logina' },
+
 ];
