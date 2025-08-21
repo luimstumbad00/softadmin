@@ -13,7 +13,7 @@
           <div class="form-group mb-4">
             <label class="form-label">Razón Social:</label>
             <input formControlName="RazonSocial" class="form-control form-control-lg" 
-                   placeholder="Ingresa tu usuario" />
+                   placeholder="Ingrese su Razón Social" />
             <div *ngIf="form.controls['RazonSocial'].touched && form.controls['RazonSocial'].invalid" 
                  class="text-danger small mt-1">
               Razón social requerida
@@ -25,7 +25,7 @@
             <label class="form-label">RFC:</label>
             <div class="input-group">
               <input formControlName="RFC" [type]="showPassword ? 'text' : 'password'" 
-                     class="form-control form-control-lg" placeholder="Ingresa tu clave" />
+                     class="form-control form-control-lg" placeholder="Ingrese su RFC" />
               <button class="btn btn-outline-secondary" type="button" 
                       (click)="showPassword = !showPassword">
                 <i class="fas" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>

@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,33 +15,54 @@ export class AuthService {
   private apiUrl = 'http://localhost:8080/login/clientes'; // Reemplaza con la URL de tu API
   private apiTrabajadoresUrl = 'http://localhost:8080/login/trabajadores';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
-login(RazonSocial: string, RFC: string): Observable<HttpResponse<string>> {
-  const credentials = { RazonSocial, RFC };
-  console.log('Enviando credenciales:', credentials);
-  return this.http.post(this.apiUrl, credentials, {
-    observe: 'response',
-    responseType: 'text'
-  }).pipe(
-    catchError(err => {
-      // Pasar el error para que lo maneje el componente
-      return throwError(() => err);
-    })
-  );
-}
-
-// Login para trabajadores
-  loginTrabajador(usuario: string, password: string): Observable<HttpResponse<string>> {
-    const credentials = { usuario, password };
-    console.log('Enviando credenciales trabajador:', credentials);
-    return this.http.post(this.apiTrabajadoresUrl, credentials, {
+// Login cliente
+  login(RazonSocial: string, RFC: string) {
+    const credentials = { RazonSocial, RFC };
+    return this.http.post(this.apiUrl, credentials, {
       observe: 'response',
       responseType: 'text'
     }).pipe(
-      catchError(err => throwError(() => err))
+      tap(res => {
+        const token = res.body;
+        if (token) {
+          this.saveToken(token);       // Guardar token
+          alert("Bienvenido cliente");
+          this.router.navigate(['/generalc']); // Redirigir a panel cliente
+        }
+      }),
+      catchError(err => {
+      // Mostrar el mensaje del backend en alerta
+      const mensaje = err.error || 'Error desconocido';
+      alert(`Error: ${mensaje}`);
+      return throwError(() => err); // Propagar el error si quieres seguir manejándolo
+    })
     );
   }
+
+loginTrabajador(usuario: string, password: string) {
+  const credentials = { usuario, password };
+  return this.http.post(this.apiTrabajadoresUrl, credentials, {
+    observe: 'response',
+    responseType: 'text'
+  }).pipe(
+    tap(res => {
+      const token = res.body;
+      if (token) {
+        this.saveToken(token);       // Guardar token
+        alert("Bienvenido");
+        this.router.navigate(['/estatus']); // Redirigir a panel admin
+      }
+    }),
+    catchError(err => {
+      // Mostrar el mensaje del backend en alerta
+      const mensaje = err.error || 'Error desconocido';
+      alert(`Error: ${mensaje}`);
+      return throwError(() => err); // Propagar el error si quieres seguir manejándolo
+    })
+  );
+}
 
 
   // Nuevo método para guardar el token
