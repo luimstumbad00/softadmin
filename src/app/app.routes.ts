@@ -9,13 +9,12 @@ export const routes: Routes = [
   { path: 'logina', component: Logina },
   { path: 'loginc', component: Loginc },
   // Paneles admin (protegidos)
-  { path: 'general', component: General, canActivate: [authGuard]},
-  { path: 'estatus', component: Estatus, canActivate: [authGuard]},
+  { path: 'general', component: General},
+  { path: 'estatus', component: Estatus},
    // Panel cliente (protegido)
-  { path: 'generalc', component: Generalc, canActivate: [authGuard]},
+  { path: 'generalc', component: Generalc},
   //Default
   { path: '', redirectTo: 'logina', pathMatch: 'full' },
   // Wildcard → login admin
   { path: '**', redirectTo: 'logina' },
-
 ];

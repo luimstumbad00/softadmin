@@ -41,7 +41,7 @@ export class Loginc {
       if (token) {
         localStorage.setItem('jwt', token);
         this.serverError = null;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/generalc']);
       } else {
         this.serverError = 'No se recibió token en la respuesta.';
       }

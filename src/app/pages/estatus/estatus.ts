@@ -5,7 +5,7 @@ import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: 'app-estatus',
-  imports: [Tabla,],
+  imports: [Tabla, Header, Footer],
   templateUrl: './estatus.html',
   styleUrl: './estatus.css'
 })

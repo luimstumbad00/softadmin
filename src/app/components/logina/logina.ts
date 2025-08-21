@@ -43,7 +43,7 @@ export class Logina {
       if (token) {
         localStorage.setItem('jwt', token);
         this.serverError = null;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/estatus']);
       } else {
         this.serverError = 'No se recibió token en la respuesta.';
       }
@@ -63,10 +63,7 @@ export class Logina {
     err?.statusText ??
     'Error desconocido del servidor.';
 }
-
 });
-
-
   }
 }
 
