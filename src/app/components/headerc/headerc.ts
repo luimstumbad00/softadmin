@@ -3,16 +3,17 @@ import { RouterModule } from '@angular/router';
 import{AuthService} from '../../services/auth'
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-headerc',
   imports: [RouterModule ],
-  templateUrl: './header.html',
-  styleUrl: './header.css'
+  templateUrl: './headerc.html',
+  styleUrl: './headerc.css'
 })
-export class Header {
+export class Headerc {
   constructor(private authService: AuthService) {}
 
   salir() {
     this.authService.logout();
   }
+
 
 }

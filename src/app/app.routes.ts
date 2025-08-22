@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { General } from './pages/general/general';
 import { Estatus } from './pages/estatus/estatus';
-import { authGuard } from './guards/auth-guard'
 import { Generalc } from './pages/generalc/generalc';
 import { Logina } from './components/logina/logina';
 import { Loginc } from './components/loginc/loginc';

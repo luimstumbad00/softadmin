@@ -1,0 +1,43 @@
+/* Encabezado */
+.custom-header {
+  background-color: #6f064f;
+  padding: 0.8rem 1rem;
+}
+
+/* Texto principal */
+.header-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Logo */
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+
+/* Links */
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: white !important;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #ddd !important;
+}
+
+/* Botón cerrar sesión */
+.btn-logout {
+  background-color: #d29e0e;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.btn-logout:hover {
+  background-color: #be3f65;
+}
