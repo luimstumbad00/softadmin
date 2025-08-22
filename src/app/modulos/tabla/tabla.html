@@ -1,27 +1,30 @@
-<table class="tabla-servicios">
-  <thead>
-    <tr>
-      <th>Cliente</th>
-      <th>Equipo</th>
-      <th>Clave</th>
-      <th>Descripción</th>
-      <th>Fecha</th>
-      <th>Estatus</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of servicios">
-      <td>{{ item.cliente }}</td>
-      <td>{{ item.equipo }}</td>
-      <td>{{ item.clave }}</td>
-      <td>{{ item.descripcion }}</td>
-      <td>{{ item.fecha }}</td>
-      <td>
-        <span [ngClass]="getStatusClass(item.estatus)">
-          {{ item.estatus }}
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+<div class="tabla-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th (click)="sortData('numeroOrden')">Orden</th>
+        <th (click)="sortData('cliente')">Cliente</th>
+        <th (click)="sortData('responsable')">Responsable</th>
+        <th (click)="sortData('tipoServicio')">Servicio</th>
+        <th (click)="sortData('fechaHora')">Fecha hora</th>
+        <th (click)="sortData('ultimaNota')">Última nota</th>
+        <th (click)="sortData('status')">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let servicio of servicios">
+        <td>{{ servicio.numeroOrden }}</td>
+        <td>{{ servicio.cliente }}</td>
+        <td>{{ servicio.responsable }}</td>
+        <td>{{ servicio.tipoServicio }}</td>
+        <td>{{ servicio.fechaHora | date:'dd/MM/yyyy | HH:mm' }}</td>
+        <td>{{ servicio.ultimaNota }}</td>
+        <td>
+          <span class="status" [ngClass]="getStatusClass(servicio.status)">
+            {{ servicio.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

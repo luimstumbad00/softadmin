@@ -1,10 +1,10 @@
-<app-header></app-header>
-
-<div class="container">
-  <div class="Titulo">Estatus</div>
-  <div class="Tabla">
-    <app-tabla></app-tabla>
+<main style="height: 100vh;">
+  <app-header></app-header>
+  <br>
+  <h1 style="text-align: center; font-weight: bold;">Estatus</h1>
+  <div class="container pt-4">
+    <app-tabla [servicios]="servicios"></app-tabla>
   </div>
-</div>
-
+</main>
+<br>
 <app-footer></app-footer>

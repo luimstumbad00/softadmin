@@ -1,9 +1,53 @@
 <app-header></app-header>
-<div class="container">
-  <div class="Filtrados"></div>
-  <div class="Titulo">GENERAL</div>
-  <div class="Contenedores">
-    <app-tarjetas></app-tarjetas>
+
+<main style="margin-top: 58px">
+  <div class="container pt-4">
+    <div class="card">
+      <div class="card-header text-center py-3">
+        <h5 class="mb-0 text-center">
+          <strong>Estatus de Servicios</strong>
+        </h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover text-nowrap">
+            <thead>
+              <tr>
+                <th>Num. de orden</th>
+                <th>Cliente</th>
+                <th>Tipo de servicio</th>
+                <th>Personal responsable</th>
+                <th>Status</th>
+                <th>Fecha hora</th>
+                <th>Última nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--  PARA CUANDO SE CONECTE A LA BD
+              <tr *ngFor="let servicio of servicios">
+                <td>{{ servicio.numeroOrden }}</td>
+                <td>{{ servicio.cliente }}</td>
+                <td>{{ servicio.tipoServicio }}</td>
+                <td>{{ servicio.responsable }}</td>
+                <td>{{ servicio.status }}</td>
+                <td>{{ servicio.fechaHora | date:'short' }}</td>
+                <td>{{ servicio.ultimaNota }}</td>
+              </tr> -->
+              <tr>
+                <td>10534</td>
+                <td>Hospital La Raza</td>
+                <td>Mantenimiento</td>
+                <td>Ing. Hector</td>
+                <td>En proceso</td>
+                <td>22/08/2025 12:34</td>
+                <td>Requiere refacciones</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</main>
+
 <app-footer></app-footer>

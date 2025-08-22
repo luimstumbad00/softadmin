@@ -1,46 +1,72 @@
-.tabla-servicios {
+/* Contenedor limpio, sin borde gris */
+.tabla-container {
+  margin: 5px auto;
+  max-width: 100%;
+  padding: 5px;
+  background: transparent;
+}
+
+/* Tabla sin bordes externos */
+.custom-table {
   width: 100%;
   border-collapse: collapse;
-  font-family: sans-serif;
+  font-size: 16px;
 }
 
-.tabla-servicios thead {
-  background-color: #67004e;
+/* Encabezado */
+.custom-table thead th {
+  background-color: #6F064F;
   color: white;
+  padding: 16px;
+  text-align: center;
+  border-right: 2px solid white;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.tabla-servicios th,
-.tabla-servicios td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #ccc;
+/* Redondear esquinas del header */
+.custom-table thead tr th:first-child {
+  border-top-left-radius: 12px;
+}
+.custom-table thead tr th:last-child {
+  border-top-right-radius: 12px;
+  border-right: none;
 }
 
-.tabla-servicios th {
-  position: sticky;
-  top: 0;
+/* Filas */
+.custom-table tbody td {
+  padding: 18px;
+  text-align: center;
+  border-right: 2px solid #6F064F;
+  font-size: 17px;
 }
 
-.tabla-servicios tr {
-  border-left: 3px solid #67004e;
+/* Quitar borde derecho de la última columna */
+.custom-table tbody td:last-child {
+  border-right: none;
 }
 
-.tabla-servicios td span {
-  display: inline-block;
+/* Más espacio entre filas */
+.custom-table tbody tr {
+  height: 60px;
+}
+
+/* Status con colores dinámicos */
+.status {
   padding: 6px 12px;
   border-radius: 8px;
   font-weight: bold;
-  text-align: center;
-  min-width: 90px;
-}
-
-/* Estatus */
-.en-curso {
-  background-color: #4CAF50;
   color: white;
 }
-
-.retrasado {
-  background-color: #F4B400;
-  color: white;
+.status.pendiente {
+  background-color: #f4c542; /* amarillo */
+}
+.status.proceso {
+  background-color: #1e88e5; /* azul */
+}
+.status.completado {
+  background-color: #43a047; /* verde */
+}
+.status.cancelado {
+  background-color: #e53935; /* rojo */
 }
