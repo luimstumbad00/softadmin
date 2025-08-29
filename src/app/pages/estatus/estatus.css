@@ -1,4 +1,11 @@
 body {
-  background-color: #fd0505;
+  margin: 0;
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }

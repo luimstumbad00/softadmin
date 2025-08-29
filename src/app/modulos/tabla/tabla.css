@@ -1,16 +1,34 @@
-/* Contenedor limpio, sin borde gris */
+/* Contenedor con scroll horizontal en pantallas pequeñas */
 .tabla-container {
   margin: 5px auto;
   max-width: 100%;
   padding: 5px;
   background: transparent;
+  overflow-x: auto;  /* <- SCROLL horizontal si es necesario */
 }
 
-/* Tabla sin bordes externos */
+/* Hacer que la tabla no se colapse demasiado */
 .custom-table {
   width: 100%;
+  min-width: 900px; /* <- asegura que no se aplaste demasiado en móvil */
   border-collapse: collapse;
   font-size: 16px;
+  white-space: nowrap; /* evita que se rompa el texto en varias líneas */
+}
+
+/* Ajuste de fuentes en pantallas más chicas */
+@media (max-width: 768px) {
+  .custom-table {
+    font-size: 14px;
+  }
+  .custom-table thead th, 
+  .custom-table tbody td {
+    padding: 10px;
+  }
+  .status {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
 }
 
 /* Encabezado */

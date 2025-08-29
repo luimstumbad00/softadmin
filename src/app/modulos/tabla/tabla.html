@@ -20,10 +20,13 @@
         <td>{{ servicio.fechaHora | date:'dd/MM/yyyy | HH:mm' }}</td>
         <td>{{ servicio.ultimaNota }}</td>
         <td>
-          <span class="status" [ngClass]="getStatusClass(servicio.status)">
+          <span class="status" [ngClass]="getStatusClass(servicio.status)"
+             (click)="abrirDetalle(servicio)">
             {{ servicio.status }}
+            
           </span>
         </td>
+        
       </tr>
     </tbody>
   </table>

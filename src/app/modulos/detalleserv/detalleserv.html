@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>Orden de Servicio #{{ data.numeroOrden }}</h2>
+
+<mat-dialog-content class="mat-typography">
+
+  <mat-divider></mat-divider>
+  <h3>Datos principales</h3>
+  <p><strong>Cliente:</strong> {{ data.cliente }}</p>
+  <p><strong>Tipo de servicio:</strong> {{ data.tipoServicio }}</p>
+  <p><strong>Status:</strong> {{ data.status }}</p>
+  <p><strong>Fecha:</strong> {{ data.fechaHora | date:'dd/MM/yyyy' }}</p>
+  <p><strong>Hora de inicio:</strong> {{ data.horaInicio }}</p>
+
+  <mat-divider></mat-divider>
+  <h3>Contacto</h3>
+  <p><strong>Dirección:</strong> {{ data.direccion }}</p>
+  <p><strong>Responsable:</strong> {{ data.responsable }}</p>
+  <p><strong>Teléfonos:</strong></p>
+  <ul>
+    <li *ngFor="let tel of data.telefonosContacto">{{ tel }}</li>
+  </ul>
+
+  <mat-divider></mat-divider>
+  <h3>Recursos</h3>
+  <p><strong>Personal responsable:</strong> {{ data.personalResponsable }}</p>
+
+  <p><strong>Equipo:</strong></p>
+  <ul>
+    <li *ngFor="let eq of data.equipo">{{ eq }}</li>
+  </ul>
+
+  <p><strong>Herramientas:</strong></p>
+  <ul>
+    <li *ngFor="let h of data.herramientas">{{ h }}</li>
+  </ul>
+
+  <p><strong>Personal de cuadrilla:</strong></p>
+  <ul>
+    <li *ngFor="let p of data.personalCuadrilla">{{ p }}</li>
+  </ul>
+
+  <mat-divider></mat-divider>
+  <h3>Condiciones</h3>
+  <p>{{ data.condiciones }}</p>
+
+  <mat-divider></mat-divider>
+  <h3>Notas adicionales</h3>
+  <p>{{ data.notasAdicionales }}</p>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary" mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>
